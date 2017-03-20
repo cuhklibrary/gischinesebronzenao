@@ -161,3 +161,100 @@ h3 {
       display: none;
   }
 }
+
+append(province).append(site).append(site_no).append(count).append(inscriptions).append(height).append(reference).append(quot);
+.province::before {
+	font-weight: bold;
+    content: "省: ";
+}
+
+.province {
+    margin: 5px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 5px;
+}
+
+.site::before {
+	font-weight: bold;
+    content: "遺址: ";
+}
+
+.site {
+    margin: 5px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 5px;
+}
+
+.site_no::before {
+	font-weight: bold;
+    content: "墓地編號: ";
+}
+
+.site_no {
+    margin: 5px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 5px;
+}
+
+.count::before {
+	font-weight: bold;
+    content: "出土鐃數量: ";
+}
+
+.count {
+    margin: 5px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 5px;
+}
+
+.inscriptions::before {
+	font-weight: bold;
+    content: "銘文: ";
+}
+
+.inscriptions {
+    margin: 5px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 5px;
+}
+
+.height::before {
+	font-weight: bold;
+    content: "高度 (厘米): ";
+}
+
+.height {
+    margin: 5px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 5px;
+}
+
+.reference::before {
+	font-weight: bold;
+    content: "參考資料: ";
+}
+
+.reference {
+    margin: 5px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 5px;
+}
+
+.quot::before {
+	font-weight: bold;
+    content: "原文節錄: ";
+}
+
+.quot {
+    margin: 5px;
+    text-align: left;
+    font-size: 11pt;
+    padding: 5px;
+}
