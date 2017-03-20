@@ -52,7 +52,7 @@ function initMap() {
           });
 		  
 		  var province = $('<p></p>', {
-            text: feature.properties['省'],
+            text: '省: ' + feature.properties['省'],
             class: 'description'
           });
 
