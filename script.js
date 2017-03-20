@@ -52,7 +52,7 @@ function initMap() {
           });
 
           var description = $('<p></p>', {
-            text: feature.properties['參考資料'],
+            text: feature.properties['參考資料'] + feature.properties['原文節錄'],
             class: 'description'
           });
 
@@ -79,7 +79,7 @@ function initMap() {
             areaTop += $('div#container' + i).height() + imageContainerMargin;
           }
 
-          areaBottom = areaTop + $('div#container' + feature.properties['id']).height();
+          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() + 100;
 
           $('div#contents').scroll(function() {
             if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
