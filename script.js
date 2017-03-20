@@ -91,7 +91,9 @@ function initMap() {
             class: 'quot'
           });
 		  
-		  var spacer = $('<p>&nbsp;</p>', {
+		  var spacer = $('<p></p>', {
+			text: &nbsp;,
+            class: 'spacer'
           });
 
           //var container = $('<div></div>', {
