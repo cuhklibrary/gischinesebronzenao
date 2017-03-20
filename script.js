@@ -92,7 +92,7 @@ function initMap() {
           });
 		  
 		  var spacer = $('<p></p>', {
-			text: &nbsp;,
+			text: '',
             class: 'spacer'
           });
 
