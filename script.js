@@ -6,11 +6,10 @@ $('div#contents').scroll(function() {
   scrollPosition = $(this).scrollTop();
 });
 
-var map = null;
 function initMap() {
 
   // This creates the Leaflet map with a generic start point, because code at bottom automatically fits bounds to all markers
-  map = L.map('map', {
+  var map = L.map('map', {
     center: [0, 0],
     zoom: 5,
     scrollWheelZoom: false
@@ -150,8 +149,8 @@ function initMap() {
 
 function resetMap()
 {
-	map.off();
-	map.remove();
+	L.map.off();
+	L.map.remove();
 	initMap();
 }
 
