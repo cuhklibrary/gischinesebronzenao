@@ -92,7 +92,7 @@ function initMap() {
           });
 		  
 		  var spacer = $('<p></p>', {
-			text: '',
+			text: ' ',
             class: 'spacer'
           });
 
@@ -112,7 +112,7 @@ function initMap() {
           $('#contents').append(container);
 
           var i;
-          var areaTop = 100;
+          var areaTop = -100;
           var areaBottom = 0;
 
           // Calculating total height of blocks above active
@@ -120,7 +120,7 @@ function initMap() {
             areaTop += $('div#container' + i).height() + imageContainerMargin;
           }
 
-          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() + 150;
+          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() + 200;
 
           $('div#contents').scroll(function() {
             if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
