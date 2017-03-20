@@ -162,7 +162,7 @@ h3 {
   }
 }
 
-append(province).append(site).append(site_no).append(count).append(inscriptions).append(height).append(reference).append(quot);
+
 .province::before {
 	font-weight: bold;
     content: "省: ";

@@ -90,11 +90,14 @@ function initMap() {
             text: feature.properties['原文節錄'],
             class: 'quot'
           });
-
-          var container = $('<div></div>', {
-            id: 'container' + feature.properties['id'],
-            class: 'image-container'
+		  
+		  var spacer = $('<p>&nbsp;</p>', {
           });
+
+          //var container = $('<div></div>', {
+          //  id: 'container' + feature.properties['id'],
+          //  class: 'image-container'
+          //});
 
           //var imgHolder = $('<div></div', {
           //  class: 'img-holder'
@@ -103,11 +106,11 @@ function initMap() {
           //imgHolder.append(image);
 
           //container.append(item).append(imgHolder).append(source).append(description);
-		  container.append(item).append(source).append(province).append(site).append(site_no).append(count).append(inscriptions).append(height).append(reference).append(quot);
+		  container.append(item).append(source).append(province).append(site).append(site_no).append(count).append(inscriptions).append(height).append(reference).append(quot).append(spacer);
           $('#contents').append(container);
 
           var i;
-          var areaTop = -100;
+          var areaTop = 100;
           var areaBottom = 0;
 
           // Calculating total height of blocks above active
@@ -115,7 +118,7 @@ function initMap() {
             areaTop += $('div#container' + i).height() + imageContainerMargin;
           }
 
-          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() + 100;
+          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() + 150;
 
           $('div#contents').scroll(function() {
             if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
