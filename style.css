@@ -37,6 +37,7 @@ body {
 #contents .space-at-the-top {
     height: 30px;
     margin: 0px;
+	margin-top: 50px;
 }
 
 #contents .space-at-the-bottom {
@@ -113,7 +114,7 @@ h3 {
 }
 
 .source {
-    font-size: 9pt;
+    font-size: 11pt;
     margin: 20px;
 }
 
@@ -261,8 +262,8 @@ h3 {
 
 .spacer {
     margin: 5px;
-	margin-bottom: 20px;
     text-align: left;
     font-size: 11pt;
     padding: 5px;
+	padding-bottom: 20px;
 }
