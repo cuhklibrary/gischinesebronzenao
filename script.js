@@ -123,11 +123,11 @@ function initMap() {
             areaTop += $('div#container' + i).height() + imageContainerMargin;
           }
 
-          areaBottom = areaTop + $('div#container' + feature.properties['id']).height();
+          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() - imageContainerMargin;
 
           $('div#contents').scroll(function() {
             //if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
-			if ($(this).scrollTop() >= areaTop) {
+			if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
               $('.image-container').removeClass("inFocus").addClass("outFocus");
               $('div#container' + feature.properties['id']).addClass("inFocus").removeClass("outFocus");
 
