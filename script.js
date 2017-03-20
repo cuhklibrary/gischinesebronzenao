@@ -126,7 +126,8 @@ function initMap() {
           areaBottom = areaTop + $('div#container' + feature.properties['id']).height();
 
           $('div#contents').scroll(function() {
-            if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
+            //if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
+			if ($(this).scrollTop() >= areaTop) {
               $('.image-container').removeClass("inFocus").addClass("outFocus");
               $('div#container' + feature.properties['id']).addClass("inFocus").removeClass("outFocus");
 
