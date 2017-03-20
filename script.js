@@ -152,8 +152,8 @@ function initMap() {
 
 function resetMap()
 {
-	map.fitBounds(geojson.getBounds());
 	location.href = "#space-at-the-top";
+	map.fitBounds(geojson.getBounds());
 }
 
 initMap();
