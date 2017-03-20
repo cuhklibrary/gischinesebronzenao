@@ -21,7 +21,7 @@ function initMap() {
   }).addTo(map);
 
   // This loads the GeoJSON map data file from a local folder
-  $.getJSON('geoJSON.json', function(data) {
+  $.getJSON('storymap.json', function(data) {
     var geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         (function(layer, properties) {
