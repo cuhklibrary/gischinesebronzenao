@@ -116,7 +116,7 @@ function initMap() {
 
           var i;
           var areaTop = -150;
-          var areaBottom = 0;
+          var areaBottom = 100;
 
           // Calculating total height of blocks above active
           for (i = 1; i < feature.properties['id']; i++) {
