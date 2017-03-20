@@ -6,13 +6,15 @@ $('div#contents').scroll(function() {
   scrollPosition = $(this).scrollTop();
 });
 
+var geojson = null;
+
 function initMap() {
 
   // This creates the Leaflet map with a generic start point, because code at bottom automatically fits bounds to all markers
   var map = L.map('map', {
     center: [0, 0],
     zoom: 5,
-    scrollWheelZoom: false
+    scrollWheelZoom: true
   });
 
   // This displays a base layer map (other options available)
@@ -22,7 +24,7 @@ function initMap() {
 
   // This loads the GeoJSON map data file from a local folder
   $.getJSON('storymap.json', function(data) {
-    var geojson = L.geoJson(data, {
+    geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         (function(layer, properties) {
           // This creates numerical icons to match the ID numbers
@@ -149,9 +151,7 @@ function initMap() {
 
 function resetMap()
 {
-	L.map.off();
-	L.map.remove();
-	initMap();
+	L.map.fitBounds(geojson.getBounds());
 }
 
 initMap();
