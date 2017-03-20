@@ -53,42 +53,42 @@ function initMap() {
 		  
 		  var province = $('<p></p>', {
             text: feature.properties['省'],
-            class: 'description'
+            class: 'province'
           });
 
           var site = $('<p></p>', {
             text: feature.properties['遺址'],
-            class: 'description'
+            class: 'site'
           });
 		  
 		  var site_no = $('<p></p>', {
             text: feature.properties['墓地編號'],
-            class: 'description'
+            class: 'site_no'
           });
 		  
 		  var count = $('<p></p>', {
             text: feature.properties['出土鐃數量'],
-            class: 'description'
+            class: 'count'
           });
 		  
 		  var inscriptions = $('<p></p>', {
             text: feature.properties['銘文'],
-            class: 'description'
+            class: 'inscriptions'
           });
 		  
 		  var height = $('<p></p>', {
             text: feature.properties['高度 (厘米)'],
-            class: 'description'
+            class: 'height'
           });
 		  
 		  var reference = $('<p></p>', {
             text: feature.properties['參考資料'],
-            class: 'description'
+            class: 'reference'
           });
 		  
 		  var quot = $('<p></p>', {
             text: feature.properties['原文節錄'],
-            class: 'description'
+            class: 'quot'
           });
 
           var container = $('<div></div>', {
