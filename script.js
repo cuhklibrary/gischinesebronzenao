@@ -115,7 +115,7 @@ function initMap() {
           $('#contents').append(container);
 
           var i;
-          var areaTop = -80;
+          var areaTop = -150;
           var areaBottom = 0;
 
           // Calculating total height of blocks above active
