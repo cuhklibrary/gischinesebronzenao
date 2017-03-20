@@ -40,9 +40,9 @@ function initMap() {
             class: 'item-header'
           });
 
-          var image = $('<img>', {
-            src: feature.properties['image'],
-          });
+          //var image = $('<img>', {
+          //  src: feature.properties['image'],
+          //});
 
           var source = $('<a>', {
             text: feature.properties['source-credit'],
@@ -50,9 +50,44 @@ function initMap() {
             target: "_blank",
             class: 'source'
           });
+		  
+		  var province = $('<p></p>', {
+            text: feature.properties['省'],
+            class: 'description'
+          });
 
-          var description = $('<p></p>', {
-            text: feature.properties['參考資料'] + feature.properties['原文節錄'],
+          var site = $('<p></p>', {
+            text: feature.properties['遺址'],
+            class: 'description'
+          });
+		  
+		  var site_no = $('<p></p>', {
+            text: feature.properties['墓地編號'],
+            class: 'description'
+          });
+		  
+		  var count = $('<p></p>', {
+            text: feature.properties['出土鐃數量'],
+            class: 'description'
+          });
+		  
+		  var inscriptions = $('<p></p>', {
+            text: feature.properties['銘文'],
+            class: 'description'
+          });
+		  
+		  var height = $('<p></p>', {
+            text: feature.properties['高度 (厘米)'],
+            class: 'description'
+          });
+		  
+		  var reference = $('<p></p>', {
+            text: feature.properties['參考資料'],
+            class: 'description'
+          });
+		  
+		  var quot = $('<p></p>', {
+            text: feature.properties['原文節錄'],
             class: 'description'
           });
 
@@ -61,13 +96,14 @@ function initMap() {
             class: 'image-container'
           });
 
-          var imgHolder = $('<div></div', {
-            class: 'img-holder'
-          });
+          //var imgHolder = $('<div></div', {
+          //  class: 'img-holder'
+          //});
 
-          imgHolder.append(image);
+          //imgHolder.append(image);
 
-          container.append(item).append(imgHolder).append(source).append(description);
+          //container.append(item).append(imgHolder).append(source).append(description);
+		  container.append(item).append(source).append(province).append(site).append(site_no).append(count).append(inscriptions).append(height).append(reference).append(quot);
           $('#contents').append(container);
 
           var i;
