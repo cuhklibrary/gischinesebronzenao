@@ -123,7 +123,7 @@ function initMap() {
             areaTop += $('div#container' + i).height() + imageContainerMargin;
           }
 
-          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() - 50;
+          areaBottom = areaTop + $('div#container' + feature.properties['id']).height();
 
           $('div#contents').scroll(function() {
             if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
