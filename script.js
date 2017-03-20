@@ -123,11 +123,10 @@ function initMap() {
             areaTop += $('div#container' + i).height() + imageContainerMargin;
           }
 
-          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() - imageContainerMargin;
+          areaBottom = areaTop + $('div#container' + feature.properties['id']).height();
 
           $('div#contents').scroll(function() {
-            //if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
-			if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
+            if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
               $('.image-container').removeClass("inFocus").addClass("outFocus");
               $('div#container' + feature.properties['id']).addClass("inFocus").removeClass("outFocus");
 
@@ -137,7 +136,7 @@ function initMap() {
 
           // Make markers clickable
           layer.on('click', function() {
-            $("div#contents").animate({scrollTop: areaTop + "px"});
+            $("div#contents").animate({scrollTop: areaTop + imageContainerMargin + "px"});
           });
 
         })(layer, feature.properties);
@@ -151,10 +150,9 @@ function initMap() {
   });
 }
 
-function resetMap()
+function home()
 {
-	location.href = "#space-at-the-top";
-	map.fitBounds(geojson.getBounds());
+	location.href = "index.html";
 }
 
 initMap();
