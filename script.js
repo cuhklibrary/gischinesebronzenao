@@ -96,10 +96,10 @@ function initMap() {
             class: 'spacer'
           });
 
-          //var container = $('<div></div>', {
-          //  id: 'container' + feature.properties['id'],
-          //  class: 'image-container'
-          //});
+          var container = $('<div></div>', {
+            id: 'container' + feature.properties['id'],
+            class: 'image-container'
+          });
 
           //var imgHolder = $('<div></div', {
           //  class: 'img-holder'
