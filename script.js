@@ -115,15 +115,15 @@ function initMap() {
           $('#contents').append(container);
 
           var i;
-          var areaTop = -150;
-          var areaBottom = 100;
+          var areaTop = -100;
+          var areaBottom = 0;
 
           // Calculating total height of blocks above active
           for (i = 1; i < feature.properties['id']; i++) {
             areaTop += $('div#container' + i).height() + imageContainerMargin;
           }
 
-          areaBottom = areaTop + $('div#container' + feature.properties['id']).height();
+          areaBottom = areaTop + $('div#container' + feature.properties['id']).height() + 50;
 
           $('div#contents').scroll(function() {
             if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
