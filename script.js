@@ -131,20 +131,21 @@ var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
           areaBottom = areaTop + $('div#container' + feature.properties['id']).height();
 
           $('div#contents').scroll(function() {
-            if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
-              $('.image-container').removeClass("inFocus").addClass("outFocus");
-              $('div#container' + feature.properties['id']).addClass("inFocus").removeClass("outFocus");
+			if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
+			  $('.scrolltest').text($(this).scrollTop());
+			  $('.image-container').removeClass("inFocus").addClass("outFocus");
+			  $('div#container' + feature.properties['id']).addClass("inFocus").removeClass("outFocus");
 
-              map.flyTo([feature.geometry.coordinates[1], feature.geometry.coordinates[0] ], feature.properties['zoom']);
-            }
+			  map.flyTo([feature.geometry.coordinates[1], feature.geometry.coordinates[0] ], feature.properties['zoom']);
+			}
           });
 
           // Make markers clickable
           layer.on('click', function() {
-            $("div#contents").animate({scrollTop: areaTop + imageContainerMargin + "px"});
-          });
-
-        })(layer, feature.properties);
+			$("div#contents").animate({scrollTop: areaTop + imageContainerMargin});
+		  });
+        
+		})(layer, feature.properties);
       }
     });
 
