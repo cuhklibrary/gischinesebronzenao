@@ -132,7 +132,6 @@ var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
 
           $('div#contents').scroll(function() {
 			if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
-			  $('.scrolltest').text($(this).scrollTop());
 			  $('.image-container').removeClass("inFocus").addClass("outFocus");
 			  $('div#container' + feature.properties['id']).addClass("inFocus").removeClass("outFocus");
 
