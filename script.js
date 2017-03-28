@@ -85,7 +85,7 @@ var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
           });
 		  
 		  var height = $('<p></p>', {
-            text: feature.properties['高度 (厘米)'],
+            text: feature.properties['高度 (厘米) '],
             class: 'height'
           });
 		  
