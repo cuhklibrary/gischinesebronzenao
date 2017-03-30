@@ -91,9 +91,10 @@
   <hop> <from>featuresJSON &#x28;story-map&#x29;</from><to>geoJSON &#x28;story-map&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>source-link</from><to>properties JSON &#x28;story-map&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>story map constants</from><to>reference</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>GCJ02 transform</to><enabled>Y</enabled> </hop>
-  <hop> <from>GCJ02 transform</from><to>object id</to><enabled>Y</enabled> </hop>
   <hop> <from>Excel table 3.1</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>GCJ02 transform 2</to><enabled>N</enabled> </hop>
+  <hop> <from>GCJ02 transform 2</from><to>object id</to><enabled>N</enabled> </hop>
+  <hop> <from>Select values</from><to>object id</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Excel table 3.1</name>
@@ -214,7 +215,19 @@
         <group/>
       </field>
       <field>
-        <name>&#x539f;&#x6587;&#x7bc0;&#x9304;</name>
+        <name>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x4f4d;&#x7f6e;&#x29;</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x6587;&#x7269;&#x29;</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -264,7 +277,7 @@
     </fields>
     <sheets>
       <sheet>
-        <name>3.1</name>
+        <name>for github</name>
         <startrow>1</startrow>
         <startcol>0</startcol>
         </sheet>
@@ -289,44 +302,8 @@
     <spreadsheet_type>POI</spreadsheet_type>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>72</xloc>
-      <yloc>182</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>GCJ02 transform</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>LoadScriptFile&#x28;&#x22;D&#x3a;&#x5c;&#x5c;working&#x5c;&#x5c;github_pages&#x5c;&#x5c;gischinesebronzenao&#x5c;&#x5c;util&#x5c;&#x5c;transform.js&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;wgs_coordinates &#x3d; exports.gcj2wgs_exact&#x28;latitude, longitude&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;var latitude &#x3d; wgs_coordinates.lat&#x3b;&#xd;&#xa;var longitude &#x3d; wgs_coordinates.lng&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>latitude</name>
-        <rename>latitude</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>Y</replace>
-      </field>      <field>        <name>longitude</name>
-        <rename>longitude</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>Y</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>268</xloc>
-      <yloc>181</yloc>
+      <xloc>73</xloc>
+      <yloc>180</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -335,7 +312,7 @@
     <name>Select values</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -370,7 +347,11 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>&#x539f;&#x6587;&#x7bc0;&#x9304;</name>
+      </field>      <field>        <name>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x4f4d;&#x7f6e;&#x29;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x6587;&#x7269;&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -389,8 +370,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>170</xloc>
-      <yloc>182</yloc>
+      <xloc>171</xloc>
+      <yloc>180</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -576,7 +557,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>D&#x3a;&#x5c;working&#x5c;github_pages&#x5c;gischinesebronzenao&#x5c;data</name>
+      <name>D&#x3a;&#x5c;working&#x5c;github_pages&#x5c;gischinesebronzenao&#x5c;data&#x5c;data</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -640,7 +621,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>D&#x3a;&#x5c;working&#x5c;github_pages&#x5c;gischinesebronzenao&#x5c;storymap</name>
+      <name>D&#x3a;&#x5c;working&#x5c;github_pages&#x5c;gischinesebronzenao&#x5c;data&#x5c;storymap</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -888,8 +869,12 @@
         <element>&#x53c3;&#x8003;&#x8cc7;&#x6599;</element>
     </field>
       <field>
-        <name>&#x539f;&#x6587;&#x7bc0;&#x9304;</name>
-        <element>&#x539f;&#x6587;&#x7bc0;&#x9304;</element>
+        <name>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x4f4d;&#x7f6e;&#x29;</name>
+        <element>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x4f4d;&#x7f6e;&#x29;</element>
+    </field>
+      <field>
+        <name>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x6587;&#x7269;&#x29;</name>
+        <element>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x6587;&#x7269;&#x29;</element>
     </field>
       <field>
         <name>&#x7d93;&#x7def;&#x5ea6; &#x28;&#x6839;&#x64da;&#x6587;&#x737b;&#x63cf;&#x8ff0;&#x53ca;&#x5716;&#x793a;&#x29;</name>
@@ -964,8 +949,12 @@
         <element>&#x53c3;&#x8003;&#x8cc7;&#x6599;</element>
     </field>
       <field>
-        <name>&#x539f;&#x6587;&#x7bc0;&#x9304;</name>
-        <element>&#x539f;&#x6587;&#x7bc0;&#x9304;</element>
+        <name>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x4f4d;&#x7f6e;&#x29;</name>
+        <element>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x4f4d;&#x7f6e;&#x29;</element>
+    </field>
+      <field>
+        <name>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x6587;&#x7269;&#x29;</name>
+        <element>&#x539f;&#x6587;&#x7bc0;&#x9304; &#x28;&#x6587;&#x7269;&#x29;</element>
     </field>
       <field>
         <name>&#x7d93;&#x7def;&#x5ea6; &#x28;&#x6839;&#x64da;&#x6587;&#x737b;&#x63cf;&#x8ff0;&#x53ca;&#x5716;&#x793a;&#x29;</name>
@@ -977,11 +966,11 @@
     </field>
       <field>
         <name>source_credit</name>
-        <element>source-credit</element>
+        <element>source_credit</element>
     </field>
       <field>
         <name>source_link</name>
-        <element>source-link</element>
+        <element>source_link</element>
     </field>
     </fields>
      <cluster_schema/>
@@ -1096,6 +1085,42 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>351</xloc>
       <yloc>374</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>GCJ02 transform 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>LoadScriptFile&#x28;&#x22;D&#x3a;&#x5c;&#x5c;working&#x5c;&#x5c;github_pages&#x5c;&#x5c;gischinesebronzenao&#x5c;&#x5c;util&#x5c;&#x5c;transform.js&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;wgs_coordinates &#x3d; exports.gcj2wgs_exact&#x28;latitude, longitude&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;var latitude &#x3d; wgs_coordinates.lat&#x3b;&#xd;&#xa;var longitude &#x3d; wgs_coordinates.lng&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>latitude</name>
+        <rename>latitude</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>longitude</name>
+        <rename>longitude</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>263</xloc>
+      <yloc>100</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

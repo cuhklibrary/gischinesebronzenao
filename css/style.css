@@ -248,19 +248,24 @@ h3 {
     padding: 5px;
 }
 
-.quot::before {
+.quot_location::before {
 	font-weight: bold;
-    content: "原文節錄: ";
+    content: "原文節錄 (位置): ";
 }
 
-.quot {
+.quot_location {
     margin: 5px;
     text-align: left;
     font-size: 11pt;
     padding: 5px;
 }
 
-.spacer {
+.quot_artifact::before {
+	font-weight: bold;
+    content: "原文節錄 (文物): ";
+}
+
+.quot_artifact {
     margin: 5px;
     text-align: left;
     font-size: 11pt;

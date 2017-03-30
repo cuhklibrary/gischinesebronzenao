@@ -13,16 +13,20 @@
   <!-- load Font-Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <!-- Load leaflet.extra-markers from local directory -->
-  <script src="markers/leaflet.extra-markers.min.js"></script>
-  <link rel="stylesheet" href="markers/leaflet.extra-markers.min.css">
-  <link rel="stylesheet" href="style.css">
+  <script src="lib/markers/leaflet.extra-markers.min.js"></script>
+  <script src="lib/leaflet-plugins/layer/tile/Bing.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.0.4/dist/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" href="lib/markers/leaflet.extra-markers.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <div id="title" class="title-text">
     <h3 onclick="home()"> 出土於華北地區的銅鐃</h3>
 	<div>&nbsp;</div>
-    <small class="scrolltest">向下滾動 <i class="fa fa-chevron-down"></i></small>
+    <small class="scrolltest"><i class="fa fa-chevron-down"></i></small>
   </div>
 
   <div id="narration">
@@ -33,7 +37,7 @@
 
   <div id="map"></div>
 
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>

@@ -6,5 +6,6 @@ http://cuhklibrary.github.io/gischinesebronzenao/index.html
 
 
 
-## Powered by
+## References
 http://jackdougherty.github.io/leaflet-storymap/index.html
+https://github.com/poetic/fancy-maps

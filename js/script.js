@@ -19,17 +19,23 @@ function initMap() {
   });
 
   // This displays a base layer map (other options available)
+
 //  var lightAll = new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
 //    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 //  }).addTo(map);
 	
-var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
-	maxZoom: 17,
-}).addTo(map);
+// var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+// 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+// 	maxZoom: 17,
+// }).addTo(map);
+  var imagerySet = "AerialWithLabels"; // AerialWithLabels | Birdseye | BirdseyeWithLabels | Road
+  var bing = new L.BingLayer(" Alx86vzpbe5hk-njsuQ2jZRK0P3gvXZeado0pVj8pEwDqrPb0KTP-c07bPAn4koZ", {type: imagerySet});
+  map.addLayer(bing);
+  
+  var markers = L.markerClusterGroup();
 
   // This loads the GeoJSON map data file from a local folder
-  $.getJSON('storymap.json', function(data) {
+  $.getJSON('data/storymap.json', function(data) {
     geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         (function(layer, properties) {
@@ -53,8 +59,8 @@ var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
           //});
 
           var source = $('<a>', {
-            text: feature.properties['source-credit'],
-            href: feature.properties['source-link'],
+            text: feature.properties['source_credit'],
+            href: feature.properties['source_link'],
             target: "_blank",
             class: 'source'
           });
@@ -94,9 +100,14 @@ var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
             class: 'reference'
           });
 		  
-		  var quot = $('<p></p>', {
-            text: feature.properties['原文節錄'],
-            class: 'quot'
+		  var quot_location = $('<p></p>', {
+            text: feature.properties['原文節錄 (位置)'],
+            class: 'quot_location'
+          });
+		  
+		  var quot_artifact = $('<p></p>', {
+            text: feature.properties['原文節錄 (文物)'],
+            class: 'quot_artifact'
           });
 		  
 		  var spacer = $('<p></p>', {
@@ -116,7 +127,7 @@ var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
           //imgHolder.append(image);
 
           //container.append(item).append(imgHolder).append(source).append(description);
-		  container.append(item).append(source).append(province).append(site).append(site_no).append(count).append(inscriptions).append(height).append(reference).append(quot).append(spacer);
+		  container.append(item).append(source).append(province).append(site).append(site_no).append(count).append(inscriptions).append(height).append(reference).append(quot_location).append(quot_artifact).append(spacer);
           $('#contents').append(container);
 
           var i;
@@ -150,8 +161,10 @@ var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
 
     $('div#container1').addClass("inFocus");
     $('#contents').append("<div class='space-at-the-bottom'><a href='#space-at-the-top'><i class='fa fa-chevron-up'></i></br><small>Top</small></a></div>");
-    map.fitBounds(geojson.getBounds());
-    geojson.addTo(map);
+	
+	markers.addLayer(geojson);
+	map.addLayer(markers);
+	map.fitBounds(markers.getBounds());
   });
 }
 
