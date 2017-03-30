@@ -29,7 +29,7 @@ function initMap() {
 // 	maxZoom: 17,
 // }).addTo(map);
   var imagerySet = "AerialWithLabels"; // AerialWithLabels | Birdseye | BirdseyeWithLabels | Road
-  var bing = new L.BingLayer(" Alx86vzpbe5hk-njsuQ2jZRK0P3gvXZeado0pVj8pEwDqrPb0KTP-c07bPAn4koZ", {type: imagerySet});
+  var bing = new L.BingLayer("Alx86vzpbe5hk-njsuQ2jZRK0P3gvXZeado0pVj8pEwDqrPb0KTP-c07bPAn4koZ", {type: imagerySet});
   map.addLayer(bing);
   
   var markers = L.markerClusterGroup();

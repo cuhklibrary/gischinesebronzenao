@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Screen Leaflet Map</title>
+    <meta charset="utf-8" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.2/dist/leaflet.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css">
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+	<script src="lib/leaflet-plugins/layer/tile/Bing.js"></script>
+	<script src="https://unpkg.com/leaflet.markercluster@1.0.4/dist/leaflet.markercluster.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+		var options = {
+			maxZoom: 18,
+			minZoom: 10
+		};
+		var map = L.map('map', options).setView([-41.2858, 174.78682], 14);
+		var imagerySet = "AerialWithLabels"; // AerialWithLabels | Birdseye | BirdseyeWithLabels | Road
+		var bing = new L.BingLayer("Alx86vzpbe5hk-njsuQ2jZRK0P3gvXZeado0pVj8pEwDqrPb0KTP-c07bPAn4koZ", {type: imagerySet});
+		var markers = L.markerClusterGroup();
+		
+		var geojson = new L.geoJson();
+
+		$.ajax({
+			dataType: "json",
+			url: "data/data.json",
+			success: function(data) {
+				$(data.features).each(function(key, data) {
+					geojson.addData(data);
+					markers.addLayer(geojson);
+					map.addLayer(markers);
+					map.fitBounds(markers.getBounds());
+				});
+			},
+			error: function () { 
+			}
+		});
+		map.addLayer(bing);
+
+    </script>
+</body>
+</html>
